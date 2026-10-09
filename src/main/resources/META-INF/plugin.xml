@@ -1,0 +1,21 @@
+<idea-plugin>
+    <id>com.wenqin.inputmethod</id>
+    <name>问琴爱切输入法</name>
+    <version>1.0.5</version>
+    <vendor>WenQin</vendor>
+
+    <description><![CDATA[
+        Automatically switches macOS input sources in IntelliJ IDEA: ABC for code and Simplified Pinyin for comments and Git commit messages.
+    ]]></description>
+
+    <idea-version since-build="262" until-build="262.*"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.vcs</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="com.wenqin.inputmethod.core.InputMethodSwitchingStartupActivity"/>
+        <projectService serviceImplementation="com.wenqin.inputmethod.core.InputMethodSwitchingService"/>
+        <notificationGroup id="问琴爱切输入法" displayType="BALLOON"/>
+    </extensions>
+</idea-plugin>
